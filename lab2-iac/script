@@ -1,0 +1,27 @@
+#Generate keypair using ssh
+ssh-keygen -t rsa -b 4096 -C "hainam.nguyen.880@gmail.com"
+#tao thu muc chua keypair
+#Enter path for new key: example ./keypair/udemy-key
+
+#Terraform EC2 Instance definition syntax:
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+
+#Command Terraform:
+terraform init
+terraform plan
+terraform plan -out=planfile
+sudo chown hainamduok planfile
+chmod u+w planfile
+terraform show planfile
+terraform apply planfile
+terraform destroy
+#destroy thi sẽ destroy từ dưới lên
+
+
+-----------------------------------
+lab3
+#Copy key to server
+ssh-copy-id -i udemy-key ec2-user@ec2-47-
+128-245-33.ap-southeast-1.compute.amazonaws.com
+#state chỉ định var file
+terrform plan --var-file "terraform.tfvars"
